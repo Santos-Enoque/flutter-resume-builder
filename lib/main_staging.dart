@@ -1,6 +1,12 @@
 import 'package:resumestudio/app/app.dart';
 import 'package:resumestudio/bootstrap.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  bootstrap(() => const App());
+Future<void> main() async {
+  final preferences = await SharedPreferences.getInstance();
+  await bootstrap(
+    () => App(
+      preferences: preferences,
+    ),
+  );
 }
