@@ -1,0 +1,3 @@
+[submodule "packages/flexilayout"]
+	path = packages/flexilayout
+	url = git@github.com:Santos-Enoque/flexilayout.git

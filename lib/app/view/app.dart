@@ -2,6 +2,7 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:resumestudio/counter/counter.dart';
+import 'package:resumestudio/editor/view/editor_view.dart';
 import 'package:resumestudio/l10n/l10n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -33,7 +34,7 @@ class AppView extends StatelessWidget {
           darkTheme: const AppThemeDark().themeData,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
-          home: const CounterPage(),
+          home: const EditorPage(),
         );
       },
     );

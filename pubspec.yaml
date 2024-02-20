@@ -10,6 +10,8 @@ dependencies:
   app_ui:
     path: ./packages/app_ui
   bloc: ^8.1.2
+  flexilayout:
+    path: ./packages/flexilayout
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
