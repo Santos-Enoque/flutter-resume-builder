@@ -25,21 +25,155 @@ class EditorPage extends StatelessWidget {
           title: 'My Resume',
           rightSideMenu: const SideMenu(
             isLeft: false,
-            child: Center(
-              child: Text('Right Side Menu'),
+            child: Column(
+              children: [
+                Center(
+                  child: Text('Right Side Menu'),
+                ),
+              ],
             ),
           ),
           leftSideMenu: SideMenu(
+            sideMenuWidthExpanded: 400,
             defaultPage: Editor(
               width: width,
               mode: mode,
             ),
-            child: const Center(
-              child: Text('Left Side Menu'),
+            child: Column(
+              children: [
+                Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.arrow_back),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.surface,
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text('Create'),
+                            Text(
+                              'Templates',
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.menu),
+                    ),
+                  ],
+                ),
+                Divider(
+                  color:
+                      Theme.of(context).colorScheme.onSurface.withOpacity(.5),
+                ),
+                const ResumeSection(),
+                const ResumeSection(),
+                Expanded(child: Container()),
+                AppButton(
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                  child: const Text(
+                    'Add Section',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class ResumeSection extends StatelessWidget {
+  const ResumeSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ExpansionTile(
+      leading: IconButton(
+        onPressed: () {},
+        icon: const Icon(Icons.drag_handle),
+      ),
+      trailing: AppIconButton(
+        onPressed: () {},
+        icon: Icons.close,
+      ),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Text('Personal Information'),
+          AppIconButton(
+            onPressed: () {},
+            icon: Icons.content_copy_outlined,
+          ),
+        ],
+      ),
+      childrenPadding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.lg,
+      ),
+      children: const [
+        Row(
+          children: [
+            Expanded(
+              child: AppTextField(
+                hintText: 'Ex: John',
+                label: 'First Name',
+              ),
+            ),
+            SizedBox(
+              width: AppSpacing.sm,
+            ),
+            Expanded(
+              child: AppTextField(
+                label: 'Last Name',
+                hintText: 'Ex: Doe',
+              ),
+            ),
+          ],
+        ),
+        AppTextField(
+          label: 'Country / Region',
+          hintText: 'Ex: Japan',
+          margin: EdgeInsets.only(
+            bottom: AppSpacing.sm,
+            top: AppSpacing.sm,
+          ),
+        ),
+        AppTextField(
+          label: 'City',
+          hintText: 'Ex: Tokyo',
+          margin: EdgeInsets.only(
+            bottom: AppSpacing.sm,
+          ),
+        ),
+        AppTextField(
+          label: 'Phone Number',
+          hintText: 'Ex: +81 123 456 789',
+          margin: EdgeInsets.only(
+            bottom: AppSpacing.sm,
+          ),
+        ),
+        AppTextField(
+          label: 'Email',
+          hintText: 'Ex: example@email.com',
+          margin: EdgeInsets.only(
+            bottom: AppSpacing.sm,
+          ),
+        ),
+      ],
     );
   }
 }

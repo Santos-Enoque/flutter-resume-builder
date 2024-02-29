@@ -16,9 +16,9 @@ class AppTheme {
       primaryColor: AppColors.primaryLight,
       iconTheme: _iconTheme,
       appBarTheme: _appBarTheme,
-      inputDecorationTheme: _inputDecorationTheme,
+      // inputDecorationTheme: _inputDecorationTheme,
       snackBarTheme: _snackBarTheme,
-      elevatedButtonTheme: _elevatedButtonTheme,
+      // elevatedButtonTheme: _elevatedButtonTheme,
       colorScheme: _colorScheme,
     );
   }
@@ -123,9 +123,9 @@ class AppThemeDark {
       primaryColor: AppColors.primaryDark,
       iconTheme: _iconTheme,
       appBarTheme: _appBarTheme,
-      inputDecorationTheme: _inputDecorationTheme,
+      // inputDecorationTheme: _inputDecorationTheme,
       snackBarTheme: _snackBarTheme,
-      elevatedButtonTheme: _elevatedButtonTheme,
+      // elevatedButtonTheme: _elevatedButtonTheme,
       colorScheme: _colorScheme,
     );
   }
